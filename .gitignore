@@ -1,4 +1,4 @@
-# Environments / caches
+# Environments/caches
 .pixi/
 .venv/
 __pycache__/
@@ -9,7 +9,7 @@ __pycache__/
 build/
 dist/
 
-# Research data and results (never commit raw or derived data)
+# Research data and results
 data/
 results/
 *.xls
@@ -19,7 +19,7 @@ results/
 *_SPP_*.jpg
 *.mat
 
-# SPPplus is distributed by the Rogers group; don't commit their files
+# SPPplus is distributed by the Rogers group
 tools/
 SPPplus*/
 SPPplus_*.m
