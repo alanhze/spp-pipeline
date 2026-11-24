@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]  # 77+ needed for the SPDX `license = "MIT"` string
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spp-pipeline"
+version = "0.1.0"
+authors = [{ name = "Alan", email = "alanzenh@gmail.com" }]
+description = "Batch pipeline: rheometer Excel exports -> CSV -> SPPplus (MATLAB)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+# No upper cap: the Python limit comes from your MATLAB release, not this package.
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2",
+    "python-calamine>=0.2",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.9", "pytest>=8", "pytest-cov>=5", "openpyxl>=3.1"]
+
+[project.scripts]
+spp-pipeline = "spp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+spp = ["matlab/*.m"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+extend-exclude = [".pixi", "tools", "data", "results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q --cov=spp"

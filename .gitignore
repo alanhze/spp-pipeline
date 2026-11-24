@@ -1,0 +1,31 @@
+# Environments / caches
+.pixi/
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+build/
+dist/
+
+# Research data and results (never commit raw or derived data)
+data/
+results/
+*.xls
+*.xlsx
+*.csv
+*_SPP_*.txt
+*_SPP_*.jpg
+*.mat
+
+# SPPplus is distributed by the Rogers group; don't commit their files
+tools/
+SPPplus*/
+SPPplus_*.m
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

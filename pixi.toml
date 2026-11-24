@@ -1,0 +1,40 @@
+[workspace]
+name = "spp-pipeline"
+version = "0.1.0"
+authors = ["Alan <alanzenh@gmail.com>"]
+channels = ["conda-forge"]
+# Only list platforms you can actually test on.
+platforms = ["win-64", "linux-64"]
+
+[dependencies]
+python = "3.12.*"
+pandas = ">=2.2"
+python-calamine = ">=0.2"
+
+[pypi-dependencies]
+spp-pipeline = { path = ".", editable = true }
+
+# MATLAB engine version must match the user's MATLAB release:
+#   24.2.* = R2024b, 25.1.* = R2025a, 25.2.* = R2025b, 26.2.* = R2026b
+# (check https://pypi.org/project/matlabengine/#history for your release)
+[feature.matlab.pypi-dependencies]
+matlabengine = "==24.2.*"
+
+[feature.dev.dependencies]
+ruff = ">=0.9"
+pytest = ">=8"
+pytest-cov = ">=5"
+openpyxl = ">=3.1"
+
+[environments]
+default = ["matlab", "dev"]
+prod = ["matlab"]
+ci = ["dev"]  # no MATLAB: lint + unit tests only
+
+[tasks]
+spp = "spp-pipeline"
+test = "pytest"
+lint = "ruff check src tests"
+fix = "ruff check --fix src tests"
+format = "ruff format src tests"
+check = { depends-on = ["lint", "test"] }
