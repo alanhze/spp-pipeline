@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=77"]  # 77+ needed for the SPDX `license = "MIT"` string
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,7 +10,6 @@ description = "Batch pipeline: rheometer Excel exports -> CSV -> SPPplus (MATLAB
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-# No upper cap: the Python limit comes from your MATLAB release, not this package.
 requires-python = ">=3.10"
 dependencies = [
     "pandas>=2.2",
