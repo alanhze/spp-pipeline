@@ -19,7 +19,7 @@ Files that are already up to date are skipped, so re-running a folder is cheap.
 
 SPPplus is distributed by the Rogers Soft Matter group and is **not** included
 in this repository. Request a copy from Prof. Simon Rogers via the
-[SPP freeware page](https://publish.illinois.edu/rogerssoftmatter/?p=173) and
+[SPP page](https://publish.illinois.edu/rogerssoftmatter/?p=173) and
 unzip it anywhere, e.g. `C:\tools\SPPplus_v2`. This pipeline was tested with
 SPPplus v2.1 (May 2021). It needs these files from that folder:
 `SPPplus_read_v2.m`, `SPPplus_fourier_v2.m`, `SPPplus_print_v2.m`,
@@ -33,7 +33,7 @@ cd spp-pipeline
 pixi install
 ```
 
-**Different MATLAB release?** The MATLAB engine version must match your MATLAB.
+**MATLAB:** The MATLAB engine version must match your MATLAB.
 For example, for R2025a:
 
 ```bash
@@ -66,13 +66,13 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:<matlabroot>/bin/maca64
 Start from Excel exports:
 
 ```bash
-pixi run spp excel data/raw data/processed --spp-dir C:/tools/SPPplus_v2 --omega 0.6283
+pixi run spp excel data/raw data/processed --spp-dir C:/tools/SPPplus_v2 --omega 0.628
 ```
 
 Re-run SPP on CSVs you already extracted:
 
 ```bash
-pixi run spp csv data/processed --spp-dir C:/tools/SPPplus_v2 --omega 0.6283
+pixi run spp csv data/processed --spp-dir C:/tools/SPPplus_v2 --omega 0.628
 ```
 
 Set the `SPP_DIR` environment variable to skip `--spp-dir` every time.
@@ -80,7 +80,7 @@ Run `pixi run spp excel --help` for all options.
 
 | Option | Default | Meaning |
 |---|---|---|
-| `--omega` | *required* | Angular frequency in rad/s (2π × Hz; 0.1 Hz → 0.6283) |
+| `--omega` | *required* | Angular frequency in rad/s (2π × Hz; 0.1 Hz → 0.628) |
 | `--harmonics` | 7 | Odd number of stress harmonics kept in the Fourier reconstruction |
 | `--cycles` | 1 | Whole number of oscillation cycles in each sheet |
 | `--strain-percent` | off | Use if your export gives strain in %, so it's converted to [-] |
@@ -140,7 +140,7 @@ pixi run check    # lint + tests
 
 ## Citing
 
-If you publish results from this pipeline, cite the papers the SPPplus
+Also cite the papers the SPPplus
 authors ask for in their run script:
 
 - Rogers, S. A. (2017). In search of physical meaning: defining transient

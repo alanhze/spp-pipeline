@@ -1,7 +1,6 @@
 [workspace]
 name = "spp-pipeline"
 version = "0.1.0"
-authors = ["Alan <alanzenh@gmail.com>"]
 channels = ["conda-forge"]
 platforms = ["win-64", "linux-64"]
 
@@ -13,6 +12,7 @@ python-calamine = ">=0.2"
 [pypi-dependencies]
 spp-pipeline = { path = ".", editable = true }
 
+# Change to match the local MATLAB version
 [feature.matlab.pypi-dependencies]
 matlabengine = "==24.2.*"
 

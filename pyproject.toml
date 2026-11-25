@@ -5,7 +5,6 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spp-pipeline"
 version = "0.1.0"
-authors = [{ name = "Alan", email = "alanzenh@gmail.com" }]
 description = "Batch pipeline: rheometer Excel exports -> CSV -> SPPplus (MATLAB)"
 readme = "README.md"
 license = "MIT"
